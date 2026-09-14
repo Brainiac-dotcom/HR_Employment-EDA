@@ -1,0 +1,216 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\DELL\Documents\HR_Employment EDA\HR_Employment_STATA_Analysis.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}11 Sep 2026, 11:39:28
+
+{com}. do "C:\Users\DELL\AppData\Local\Temp\STD00000000.tmp"
+{txt}
+{com}. import delimited "C:/Users/DELL/Downloads/WA_Fn-UseC_-HR-Employee-Attrition.csv", clear
+{res}{text}(35 vars, 1,470 obs)
+
+{com}. 
+. describe
+
+{txt}Contains data
+  obs:{res}         1,470                          
+{txt} vars:{res}            35                          
+{txt} size:{res}       192,570                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:ïage           }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}ï»¿Age{p_end}
+{p 0 48}{bind:attrition      }{txt}{bind: str3    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}Attrition{p_end}
+{p 0 48}{bind:businesstravel }{txt}{bind: str17   }{bind:{txt}%17s      }{space 1}{bind:         }{bind:  }{res}{res}BusinessTravel{p_end}
+{p 0 48}{bind:dailyrate      }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}DailyRate{p_end}
+{p 0 48}{bind:department     }{txt}{bind: str22   }{bind:{txt}%22s      }{space 1}{bind:         }{bind:  }{res}{res}Department{p_end}
+{p 0 48}{bind:distancefromh~e}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}DistanceFromHome{p_end}
+{p 0 48}{bind:education      }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}Education{p_end}
+{p 0 48}{bind:educationfield }{txt}{bind: str16   }{bind:{txt}%16s      }{space 1}{bind:         }{bind:  }{res}{res}EducationField{p_end}
+{p 0 48}{bind:employeecount  }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}EmployeeCount{p_end}
+{p 0 48}{bind:employeenumber }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}EmployeeNumber{p_end}
+{p 0 48}{bind:environmentsa~n}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}EnvironmentSatisfaction{p_end}
+{p 0 48}{bind:gender         }{txt}{bind: str6    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}Gender{p_end}
+{p 0 48}{bind:hourlyrate     }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}HourlyRate{p_end}
+{p 0 48}{bind:jobinvolvement }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}JobInvolvement{p_end}
+{p 0 48}{bind:joblevel       }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}JobLevel{p_end}
+{p 0 48}{bind:jobrole        }{txt}{bind: str25   }{bind:{txt}%25s      }{space 1}{bind:         }{bind:  }{res}{res}JobRole{p_end}
+{p 0 48}{bind:jobsatisfaction}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}JobSatisfaction{p_end}
+{p 0 48}{bind:maritalstatus  }{txt}{bind: str8    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}MaritalStatus{p_end}
+{p 0 48}{bind:monthlyincome  }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}MonthlyIncome{p_end}
+{p 0 48}{bind:monthlyrate    }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}MonthlyRate{p_end}
+{p 0 48}{bind:numcompaniesw~d}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}NumCompaniesWorked{p_end}
+{p 0 48}{bind:over18         }{txt}{bind: str1    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}Over18{p_end}
+{p 0 48}{bind:overtime       }{txt}{bind: str3    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}OverTime{p_end}
+{p 0 48}{bind:percentsalary~e}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}PercentSalaryHike{p_end}
+{p 0 48}{bind:performancera~g}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}PerformanceRating{p_end}
+{p 0 48}{bind:relationships~n}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}RelationshipSatisfaction{p_end}
+{p 0 48}{bind:standardhours  }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}StandardHours{p_end}
+{p 0 48}{bind:stockoptionle~l}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}StockOptionLevel{p_end}
+{p 0 48}{bind:totalworkingy~s}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}TotalWorkingYears{p_end}
+{p 0 48}{bind:trainingtimes~r}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}TrainingTimesLastYear{p_end}
+{p 0 48}{bind:worklifebalance}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}WorkLifeBalance{p_end}
+{p 0 48}{bind:yearsatcompany }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}YearsAtCompany{p_end}
+{p 0 48}{bind:yearsincurren~e}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}YearsInCurrentRole{p_end}
+{p 0 48}{bind:yearssincelas~n}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}YearsSinceLastPromotion{p_end}
+{p 0 48}{bind:yearswithcurr~r}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}YearsWithCurrManager{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+{txt}
+{com}. encode attrition, gen(attrition_cat)
+{txt}
+{com}. encode overtime, gen(overtime_cat)
+{txt}
+{com}. encode department, gen(department_cat)
+{txt}
+{com}. encode jobrole, gen(jobrole_cat)
+{txt}
+{com}. describe
+
+{txt}Contains data
+  obs:{res}         1,470                          
+{txt} vars:{res}            39                          
+{txt} size:{res}       216,090                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:ïage           }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}ï»¿Age{p_end}
+{p 0 48}{bind:attrition      }{txt}{bind: str3    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}Attrition{p_end}
+{p 0 48}{bind:businesstravel }{txt}{bind: str17   }{bind:{txt}%17s      }{space 1}{bind:         }{bind:  }{res}{res}BusinessTravel{p_end}
+{p 0 48}{bind:dailyrate      }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}DailyRate{p_end}
+{p 0 48}{bind:department     }{txt}{bind: str22   }{bind:{txt}%22s      }{space 1}{bind:         }{bind:  }{res}{res}Department{p_end}
+{p 0 48}{bind:distancefromh~e}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}DistanceFromHome{p_end}
+{p 0 48}{bind:education      }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}Education{p_end}
+{p 0 48}{bind:educationfield }{txt}{bind: str16   }{bind:{txt}%16s      }{space 1}{bind:         }{bind:  }{res}{res}EducationField{p_end}
+{p 0 48}{bind:employeecount  }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}EmployeeCount{p_end}
+{p 0 48}{bind:employeenumber }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}EmployeeNumber{p_end}
+{p 0 48}{bind:environmentsa~n}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}EnvironmentSatisfaction{p_end}
+{p 0 48}{bind:gender         }{txt}{bind: str6    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}Gender{p_end}
+{p 0 48}{bind:hourlyrate     }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}HourlyRate{p_end}
+{p 0 48}{bind:jobinvolvement }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}JobInvolvement{p_end}
+{p 0 48}{bind:joblevel       }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}JobLevel{p_end}
+{p 0 48}{bind:jobrole        }{txt}{bind: str25   }{bind:{txt}%25s      }{space 1}{bind:         }{bind:  }{res}{res}JobRole{p_end}
+{p 0 48}{bind:jobsatisfaction}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}JobSatisfaction{p_end}
+{p 0 48}{bind:maritalstatus  }{txt}{bind: str8    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}MaritalStatus{p_end}
+{p 0 48}{bind:monthlyincome  }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}MonthlyIncome{p_end}
+{p 0 48}{bind:monthlyrate    }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}MonthlyRate{p_end}
+{p 0 48}{bind:numcompaniesw~d}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}NumCompaniesWorked{p_end}
+{p 0 48}{bind:over18         }{txt}{bind: str1    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}Over18{p_end}
+{p 0 48}{bind:overtime       }{txt}{bind: str3    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}OverTime{p_end}
+{p 0 48}{bind:percentsalary~e}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}PercentSalaryHike{p_end}
+{p 0 48}{bind:performancera~g}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}PerformanceRating{p_end}
+{p 0 48}{bind:relationships~n}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}RelationshipSatisfaction{p_end}
+{p 0 48}{bind:standardhours  }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}StandardHours{p_end}
+{p 0 48}{bind:stockoptionle~l}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}StockOptionLevel{p_end}
+{p 0 48}{bind:totalworkingy~s}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}TotalWorkingYears{p_end}
+{p 0 48}{bind:trainingtimes~r}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}TrainingTimesLastYear{p_end}
+{p 0 48}{bind:worklifebalance}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}WorkLifeBalance{p_end}
+{p 0 48}{bind:yearsatcompany }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}YearsAtCompany{p_end}
+{p 0 48}{bind:yearsincurren~e}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}YearsInCurrentRole{p_end}
+{p 0 48}{bind:yearssincelas~n}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}YearsSinceLastPromotion{p_end}
+{p 0 48}{bind:yearswithcurr~r}{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}YearsWithCurrManager{p_end}
+{p 0 48}{bind:attrition_cat  }{txt}{bind: long    }{bind:{txt}%8.0g     }{space 1}{txt}attrition_cat{p_end}
+{p 0 48}{space 44}{bind:  }{res}{res}Attrition{p_end}
+{p 0 48}{bind:overtime_cat   }{txt}{bind: long    }{bind:{txt}%8.0g     }{space 1}{txt}overtime_cat{p_end}
+{p 0 48}{space 44}{bind:  }{res}{res}OverTime{p_end}
+{p 0 48}{bind:department_cat }{txt}{bind: long    }{bind:{txt}%22.0g    }{space 1}{txt}department_cat{p_end}
+{p 0 48}{space 44}{bind:  }{res}{res}Department{p_end}
+{p 0 48}{bind:jobrole_cat    }{txt}{bind: long    }{bind:{txt}%25.0g    }{space 1}{txt}jobrole_cat{p_end}
+{p 0 48}{space 44}{bind:  }{res}{res}JobRole{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+{txt}
+{com}. 
+. save "hr_attrition_encoded.dta", replace
+{txt}file hr_attrition_encoded.dta saved
+
+{com}. ttest monthlyincome, by(attrition_cat)
+
+{txt}Two-sample t test with equal variances
+{hline 9}{c TT}{hline 68}
+   Group{col 10}{c |}{col 16}Obs{col 27}Mean{col 35}Std. Err.{col 47}Std. Dev.{col 59}[95% Conf. Interval]
+{hline 9}{c +}{hline 68}
+      No {c |}{res}{col 12}  1,233{col 22}  6832.74{col 34} 137.2158{col 46} 4818.208{col 58} 6563.537{col 70} 7101.942
+     {txt}Yes {c |}{res}{col 12}    237{col 22} 4787.093{col 34} 236.4571{col 46}  3640.21{col 58} 4321.257{col 70} 5252.929
+{txt}{hline 9}{c +}{hline 68}
+combined {c |}{res}{col 12}  1,470{col 22} 6502.931{col 34} 122.7931{col 46} 4707.957{col 58} 6262.063{col 70}   6743.8
+{txt}{hline 9}{c +}{hline 68}
+    diff {c |}{res}{col 22} 2045.647{col 34} 329.7337{col 58} 1398.847{col 70} 2692.446
+{txt}{hline 9}{c BT}{hline 68}
+    diff = mean({res}No{txt}) - mean({res}Yes{txt})                                   t = {res}  6.2039
+{txt}Ho: diff = 0                                     degrees of freedom = {res}    1468
+
+    {txt}Ha: diff < 0                 Ha: diff != 0                 Ha: diff > 0
+ Pr(T < t) = {res}1.0000         {txt}Pr(|T| > |t|) = {res}0.0000          {txt}Pr(T > t) = {res}0.0000
+{txt}
+{com}. tabulate overtime_cat attrition_cat, chi2
+
+           {txt}{c |}       Attrition
+  OverTime {c |}        No        Yes {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+        No {c |}{res}       944        110 {txt}{c |}{res}     1,054 
+{txt}       Yes {c |}{res}       289        127 {txt}{c |}{res}       416 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}     1,233        237 {txt}{c |}{res}     1,470 
+
+{txt}          Pearson chi2({res}1{txt}) = {res} 89.0439  {txt} Pr = {res}0.000
+{txt}
+{com}. tabulate department_cat attrition_cat, chi2
+
+                      {txt}{c |}       Attrition
+           Department {c |}        No        Yes {c |}     Total
+{hline 22}{c +}{hline 22}{c +}{hline 10}
+      Human Resources {c |}{res}        51         12 {txt}{c |}{res}        63 
+{txt}Research & Developmen {c |}{res}       828        133 {txt}{c |}{res}       961 
+{txt}                Sales {c |}{res}       354         92 {txt}{c |}{res}       446 
+{txt}{hline 22}{c +}{hline 22}{c +}{hline 10}
+                Total {c |}{res}     1,233        237 {txt}{c |}{res}     1,470 
+
+{txt}          Pearson chi2({res}2{txt}) = {res} 10.7960  {txt} Pr = {res}0.005
+{txt}
+{com}. 
+. ttest monthlyincome, by(attrition_cat) unequal
+
+{txt}Two-sample t test with unequal variances
+{hline 9}{c TT}{hline 68}
+   Group{col 10}{c |}{col 16}Obs{col 27}Mean{col 35}Std. Err.{col 47}Std. Dev.{col 59}[95% Conf. Interval]
+{hline 9}{c +}{hline 68}
+      No {c |}{res}{col 12}  1,233{col 22}  6832.74{col 34} 137.2158{col 46} 4818.208{col 58} 6563.537{col 70} 7101.942
+     {txt}Yes {c |}{res}{col 12}    237{col 22} 4787.093{col 34} 236.4571{col 46}  3640.21{col 58} 4321.257{col 70} 5252.929
+{txt}{hline 9}{c +}{hline 68}
+combined {c |}{res}{col 12}  1,470{col 22} 6502.931{col 34} 122.7931{col 46} 4707.957{col 58} 6262.063{col 70}   6743.8
+{txt}{hline 9}{c +}{hline 68}
+    diff {c |}{res}{col 22} 2045.647{col 34} 273.3864{col 58} 1508.244{col 70}  2583.05
+{txt}{hline 9}{c BT}{hline 68}
+    diff = mean({res}No{txt}) - mean({res}Yes{txt})                                   t = {res}  7.4826
+{txt}Ho: diff = 0                     Satterthwaite's degrees of freedom = {res} 412.741
+
+    {txt}Ha: diff < 0                 Ha: diff != 0                 Ha: diff > 0
+ Pr(T < t) = {res}1.0000         {txt}Pr(|T| > |t|) = {res}0.0000          {txt}Pr(T > t) = {res}0.0000
+{txt}
+{com}. sdtest monthlyincome, by(attrition_cat)
+
+{txt}Variance ratio test
+{hline 9}{c TT}{hline 68}
+   Group{col 10}{c |}{col 16}Obs{col 27}Mean{col 35}Std. Err.{col 47}Std. Dev.{col 59}[95% Conf. Interval]
+{hline 9}{c +}{hline 68}
+      No {c |}{res}{col 12}  1,233{col 22}  6832.74{col 34} 137.2158{col 46} 4818.208{col 58} 6563.537{col 70} 7101.942
+     {txt}Yes {c |}{res}{col 12}    237{col 22} 4787.093{col 34} 236.4571{col 46}  3640.21{col 58} 4321.257{col 70} 5252.929
+{txt}{hline 9}{c +}{hline 68}
+combined {c |}{res}{col 12}  1,470{col 22} 6502.931{col 34} 122.7931{col 46} 4707.957{col 58} 6262.063{col 70}   6743.8
+{txt}{hline 9}{c BT}{hline 68}
+    ratio = sd({res}No{txt}) / sd({res}Yes{txt})                                      f = {res}  1.7519
+{txt}Ho: ratio = 1                                   degrees of freedom = {res}1232, 236
+
+    {txt}Ha: ratio < 1               Ha: ratio != 1                 Ha: ratio > 1
+  Pr(F < f) = {res}1.0000         {txt}2*Pr(F > f) = {res}0.0000        {txt}   Pr(F > f) = {res}0.0000
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. exit, clear
