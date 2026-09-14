@@ -1,0 +1,217 @@
+-------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\DELL\Documents\HR_Employment EDA\HR_Employment_STATA_Anal
+> ysis.smcl
+  log type:  smcl
+ opened on:  11 Sep 2026, 11:39:28
+
+. do "C:\Users\DELL\AppData\Local\Temp\STD00000000.tmp"
+
+. import delimited "C:/Users/DELL/Downloads/WA_Fn-UseC_-HR-Employee-Attrition.c
+> sv", clear
+(35 vars, 1,470 obs)
+
+. 
+. describe
+
+Contains data
+  obs:         1,470                          
+ vars:            35                          
+ size:       192,570                          
+-------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+ïage            byte    %8.0g                 ï»¿Age
+attrition       str3    %9s                   Attrition
+businesstravel  str17   %17s                  BusinessTravel
+dailyrate       int     %8.0g                 DailyRate
+department      str22   %22s                  Department
+distancefromh~e byte    %8.0g                 DistanceFromHome
+education       byte    %8.0g                 Education
+educationfield  str16   %16s                  EducationField
+employeecount   byte    %8.0g                 EmployeeCount
+employeenumber  int     %8.0g                 EmployeeNumber
+environmentsa~n byte    %8.0g                 EnvironmentSatisfaction
+gender          str6    %9s                   Gender
+hourlyrate      byte    %8.0g                 HourlyRate
+jobinvolvement  byte    %8.0g                 JobInvolvement
+joblevel        byte    %8.0g                 JobLevel
+jobrole         str25   %25s                  JobRole
+jobsatisfaction byte    %8.0g                 JobSatisfaction
+maritalstatus   str8    %9s                   MaritalStatus
+monthlyincome   int     %8.0g                 MonthlyIncome
+monthlyrate     int     %8.0g                 MonthlyRate
+numcompaniesw~d byte    %8.0g                 NumCompaniesWorked
+over18          str1    %9s                   Over18
+overtime        str3    %9s                   OverTime
+percentsalary~e byte    %8.0g                 PercentSalaryHike
+performancera~g byte    %8.0g                 PerformanceRating
+relationships~n byte    %8.0g                 RelationshipSatisfaction
+standardhours   byte    %8.0g                 StandardHours
+stockoptionle~l byte    %8.0g                 StockOptionLevel
+totalworkingy~s byte    %8.0g                 TotalWorkingYears
+trainingtimes~r byte    %8.0g                 TrainingTimesLastYear
+worklifebalance byte    %8.0g                 WorkLifeBalance
+yearsatcompany  byte    %8.0g                 YearsAtCompany
+yearsincurren~e byte    %8.0g                 YearsInCurrentRole
+yearssincelas~n byte    %8.0g                 YearsSinceLastPromotion
+yearswithcurr~r byte    %8.0g                 YearsWithCurrManager
+-------------------------------------------------------------------------------
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+. encode attrition, gen(attrition_cat)
+
+. encode overtime, gen(overtime_cat)
+
+. encode department, gen(department_cat)
+
+. encode jobrole, gen(jobrole_cat)
+
+. describe
+
+Contains data
+  obs:         1,470                          
+ vars:            39                          
+ size:       216,090                          
+-------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+ïage            byte    %8.0g                 ï»¿Age
+attrition       str3    %9s                   Attrition
+businesstravel  str17   %17s                  BusinessTravel
+dailyrate       int     %8.0g                 DailyRate
+department      str22   %22s                  Department
+distancefromh~e byte    %8.0g                 DistanceFromHome
+education       byte    %8.0g                 Education
+educationfield  str16   %16s                  EducationField
+employeecount   byte    %8.0g                 EmployeeCount
+employeenumber  int     %8.0g                 EmployeeNumber
+environmentsa~n byte    %8.0g                 EnvironmentSatisfaction
+gender          str6    %9s                   Gender
+hourlyrate      byte    %8.0g                 HourlyRate
+jobinvolvement  byte    %8.0g                 JobInvolvement
+joblevel        byte    %8.0g                 JobLevel
+jobrole         str25   %25s                  JobRole
+jobsatisfaction byte    %8.0g                 JobSatisfaction
+maritalstatus   str8    %9s                   MaritalStatus
+monthlyincome   int     %8.0g                 MonthlyIncome
+monthlyrate     int     %8.0g                 MonthlyRate
+numcompaniesw~d byte    %8.0g                 NumCompaniesWorked
+over18          str1    %9s                   Over18
+overtime        str3    %9s                   OverTime
+percentsalary~e byte    %8.0g                 PercentSalaryHike
+performancera~g byte    %8.0g                 PerformanceRating
+relationships~n byte    %8.0g                 RelationshipSatisfaction
+standardhours   byte    %8.0g                 StandardHours
+stockoptionle~l byte    %8.0g                 StockOptionLevel
+totalworkingy~s byte    %8.0g                 TotalWorkingYears
+trainingtimes~r byte    %8.0g                 TrainingTimesLastYear
+worklifebalance byte    %8.0g                 WorkLifeBalance
+yearsatcompany  byte    %8.0g                 YearsAtCompany
+yearsincurren~e byte    %8.0g                 YearsInCurrentRole
+yearssincelas~n byte    %8.0g                 YearsSinceLastPromotion
+yearswithcurr~r byte    %8.0g                 YearsWithCurrManager
+attrition_cat   long    %8.0g      attrition_cat
+                                              Attrition
+overtime_cat    long    %8.0g      overtime_cat
+                                              OverTime
+department_cat  long    %22.0g     department_cat
+                                              Department
+jobrole_cat     long    %25.0g     jobrole_cat
+                                              JobRole
+-------------------------------------------------------------------------------
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+. 
+. save "hr_attrition_encoded.dta", replace
+file hr_attrition_encoded.dta saved
+
+. ttest monthlyincome, by(attrition_cat)
+
+Two-sample t test with equal variances
+------------------------------------------------------------------------------
+   Group |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+      No |   1,233     6832.74    137.2158    4818.208    6563.537    7101.942
+     Yes |     237    4787.093    236.4571     3640.21    4321.257    5252.929
+---------+--------------------------------------------------------------------
+combined |   1,470    6502.931    122.7931    4707.957    6262.063      6743.8
+---------+--------------------------------------------------------------------
+    diff |            2045.647    329.7337                1398.847    2692.446
+------------------------------------------------------------------------------
+    diff = mean(No) - mean(Yes)                                   t =   6.2039
+Ho: diff = 0                                     degrees of freedom =     1468
+
+    Ha: diff < 0                 Ha: diff != 0                 Ha: diff > 0
+ Pr(T < t) = 1.0000         Pr(|T| > |t|) = 0.0000          Pr(T > t) = 0.0000
+
+. tabulate overtime_cat attrition_cat, chi2
+
+           |       Attrition
+  OverTime |        No        Yes |     Total
+-----------+----------------------+----------
+        No |       944        110 |     1,054 
+       Yes |       289        127 |       416 
+-----------+----------------------+----------
+     Total |     1,233        237 |     1,470 
+
+          Pearson chi2(1) =  89.0439   Pr = 0.000
+
+. tabulate department_cat attrition_cat, chi2
+
+                      |       Attrition
+           Department |        No        Yes |     Total
+----------------------+----------------------+----------
+      Human Resources |        51         12 |        63 
+Research & Developmen |       828        133 |       961 
+                Sales |       354         92 |       446 
+----------------------+----------------------+----------
+                Total |     1,233        237 |     1,470 
+
+          Pearson chi2(2) =  10.7960   Pr = 0.005
+
+. 
+. ttest monthlyincome, by(attrition_cat) unequal
+
+Two-sample t test with unequal variances
+------------------------------------------------------------------------------
+   Group |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+      No |   1,233     6832.74    137.2158    4818.208    6563.537    7101.942
+     Yes |     237    4787.093    236.4571     3640.21    4321.257    5252.929
+---------+--------------------------------------------------------------------
+combined |   1,470    6502.931    122.7931    4707.957    6262.063      6743.8
+---------+--------------------------------------------------------------------
+    diff |            2045.647    273.3864                1508.244     2583.05
+------------------------------------------------------------------------------
+    diff = mean(No) - mean(Yes)                                   t =   7.4826
+Ho: diff = 0                     Satterthwaite's degrees of freedom =  412.741
+
+    Ha: diff < 0                 Ha: diff != 0                 Ha: diff > 0
+ Pr(T < t) = 1.0000         Pr(|T| > |t|) = 0.0000          Pr(T > t) = 0.0000
+
+. sdtest monthlyincome, by(attrition_cat)
+
+Variance ratio test
+------------------------------------------------------------------------------
+   Group |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+      No |   1,233     6832.74    137.2158    4818.208    6563.537    7101.942
+     Yes |     237    4787.093    236.4571     3640.21    4321.257    5252.929
+---------+--------------------------------------------------------------------
+combined |   1,470    6502.931    122.7931    4707.957    6262.063      6743.8
+------------------------------------------------------------------------------
+    ratio = sd(No) / sd(Yes)                                      f =   1.7519
+Ho: ratio = 1                                   degrees of freedom = 1232, 236
+
+    Ha: ratio < 1               Ha: ratio != 1                 Ha: ratio > 1
+  Pr(F < f) = 1.0000         2*Pr(F > f) = 0.0000           Pr(F > f) = 0.0000
+
+. 
+end of do-file
+
+. exit, clear

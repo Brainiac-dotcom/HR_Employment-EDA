@@ -51,11 +51,11 @@ Overtime status and department are the two strongest, statistically confirmed pr
 ## Repository Structure
 
 ```
+├── images/        # Exported chart images
+├── dashboard/     # Excel dashboard (.xlsx)
 ├── data/          # Raw and cleaned CSV
 ├── notebooks/     # Jupyter notebooks (data cleaning, EDA, visualization)
 ├── stata/         # .do script and .log output
-├── dashboard/     # Excel dashboard (.xlsx)
-├── images/        # Exported chart images
 └── README.md
 ```
 
